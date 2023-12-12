@@ -25,3 +25,7 @@ func HandleLogin(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"status": "you are logged in"})
 }
+
+func HandleLogout(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"response": "Logged out"})
+}

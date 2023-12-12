@@ -1,10 +1,10 @@
 package main
 
 import (
-	"atlas-auth/cmd/handlers" // adjust this import path to match your project structure
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/steamyrain/atlas-auth/cmd/handlers"
 )
 
 func main() {
@@ -14,7 +14,9 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"response": "hello world"})
 	})
 
-	r.POST("/login", handlers.Login)
+	r.POST("/login", handlers.HandleLogin)
+
+	r.POST("/logout", handlers.HandleLogout)
 
 	r.Run(":8080")
 }
